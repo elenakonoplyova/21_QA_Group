@@ -1,0 +1,45 @@
+1) Посмотреть где я - pwd
+
+2) Создать папку -  mkdir qa_course
+
+3) Зайти в папку - cd qa_course
+
+4) Создать 3 папки - mkdir user name surname
+
+5) Зайти в любоую папку - cd name
+
+6) Создать 5 файлов (3 txt, 2 json) - touch elena.txt nastya.txt vanya.txt petya.json sveta.json
+
+7) Создать 3 папки - mkdir man woman other
+
+8) Вывести список содержимого папки - ls -la
+
+9) + Открыть любой txt файл - vi vanya.txt
+
+10) + написать туда что-нибудь, любой текст - нажимаем i, затем вводим текст "vanya ivanov 20.06.1992"
+
+11) + сохранить и выйти - нажимаем клавишу Esc, затем пишем :wq и нажимаем клавишу Enter
+
+12) Выйти из папки на уровень выше - cd ..
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку - cd name ; mv vanya.txt elena.txt c:/qa_course/user
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку - cp nastya.txt petya.json c:/qa_course/surname
+
+15) Найти файл по имени - сначала перейду в главную папку - cd .. ; find . -name nastya.txt
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает - захожу в папку с файлом "nastya.txt" - cd surname; tail -f nastya.txt
+
+17) вывести несколько первых строк из текстового файла - head -n 2 nastya.txt
+
+18) вывести несколько последних строк из текстового файла - tail -n 2 nastya.txt
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает - less nastya.txt ; для выхода нажимаем q или ZZ
+
+20) вывести дату и время - date
+
+
+Задание *
+1) Отправить http запрос на сервер.
+https://api.quarantine.country/api/v1/regions - curl https://api.quarantine.country/api/v1/regions 
+
