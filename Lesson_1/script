@@ -1,0 +1,8 @@
+mkdir homework_script
+cd homework_script
+mkdir folder1 folder2 folder3
+cd folder2
+touch test1.txt test2.txt test3.txt test4.json test5.json
+mkdir dir1 dir2 dir3
+echo "$(ls)"
+mv test1.txt test4.json ../folder3
