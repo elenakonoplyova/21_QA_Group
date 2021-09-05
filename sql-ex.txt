@@ -1,0 +1,62 @@
+1)Найдите номер модели, скорость и размер жесткого диска для всех ПК стоимостью менее 500 дол. Вывести: model, speed и hd - 
+
+SELECT model, speed, hd FROM PC
+WHERE price < 500
+_______________________________________________________________________
+
+2) Найдите производителей принтеров. Вывести: maker - 
+
+Select maker
+from Product
+where type = 'Printer'
+Group by maker
+_______________________________________________________________________
+
+3)Найдите номер модели, объем памяти и размеры экранов ПК-блокнотов, цена которых превышает 1000 дол.
+
+Select model, ram, screen from laptop where price > 1000
+________________________________________________________________________
+
+4) Найдите все записи таблицы Printer для цветных принтеров.
+
+Select * from Printer
+where color= 'y'
+___________________________________________________________________________
+
+5) Найдите номер модели, скорость и размер жесткого диска ПК, имеющих 12x или 24x CD и цену менее 600 дол.
+
+Select model, speed, hd from PC
+where price < 600 AND (cd ='12x' or cd ='24x')
+______________________________________________________________________
+
+6) Для каждого производителя, выпускающего ПК-блокноты c объёмом жесткого диска не менее 10 Гбайт, найти скорости таких ПК-блокнотов. 
+Вывод: производитель, скорость.
+
+SELECT DISTINCT p.maker, l.speed
+FROM laptop l
+JOIN product p ON p.model = l.model
+WHERE l.hd >= 10
+_____________________________________
+
+7) Найдите номера моделей и цены всех имеющихся в продаже продуктов (любого типа) производителя B (латинская буква).
+
+SELECT DISTINCT product.model, pc.price
+FROM Product JOIN pc ON product.model = pc.model WHERE maker = 'B'
+UNION
+SELECT DISTINCT product.model, laptop.price
+FROM product JOIN laptop ON product.model=laptop.model WHERE maker='B'
+UNION
+SELECT DISTINCT product.model, printer.price
+FROM product JOIN printer ON product.model=printer.model WHERE maker='B';
+__________________________________________
+
+8) Найдите производителя, выпускающего ПК, но не ПК-блокноты.
+
+Select distinct maker 
+from Product
+where type = 'pc'
+EXCEPT
+SELECT DISTINCT maker
+FROM product
+Where type = 'laptop'
+-___________________________________________________________________
